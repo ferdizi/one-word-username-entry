@@ -1,6 +1,5 @@
 import { mkdirSync, writeFileSync } from "node:fs";
-import { dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
+import { join } from "node:path";
 
 // One Word, One Username, One Reward.
 // The entry is the entrant's own make.fun username, one word, nothing else.
@@ -17,6 +16,4 @@ mkdirSync(outputDir, { recursive: true });
 writeFileSync(entryPath, username, "utf8");
 
 // Echo the entry for the run log so the result is visible.
-const writtenPath = join(dirname(fileURLToPath(import.meta.url)), "entry.txt");
-void writtenPath;
 console.log(`wrote ${username.length} characters to ${entryPath}`);
